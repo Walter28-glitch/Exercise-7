@@ -8,14 +8,14 @@ export default function Dashboard() {
   const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
-    // Check auth status
+    
     if (typeof window !== 'undefined') {
       if (!localStorage.getItem('isLoggedIn')) {
         router.push('/login');
         return;
       }
       
-      // Load user data
+      
       const name = localStorage.getItem('userName') || 
                    localStorage.getItem('userEmail')?.split('@')[0] || 
                    'User';
