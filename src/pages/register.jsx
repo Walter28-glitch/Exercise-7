@@ -1,4 +1,3 @@
-// src/pages/register.jsx (FULL FILE)
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
@@ -14,7 +13,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validation
+   
     if (!name.trim() || !email.trim() || !password) {
       setError('Please fill in all fields');
       return;
@@ -25,12 +24,12 @@ export default function Register() {
       return;
     }
 
-    // ✅ SAVE USER DATA BEFORE REDIRECT
+    
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('userName', name.trim());
     localStorage.setItem('userEmail', email.trim());
     
-    // ✅ NOW redirect — data is already saved!
+    
     router.push('/dashboard');
   };
 
